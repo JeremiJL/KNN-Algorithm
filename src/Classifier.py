@@ -35,8 +35,10 @@ class Classifier:
         self.labels = self.extract_labels()
         # Observations tuple
         self.observations = self.extract_observations(train_file_path)
-        # Test Observations tuple
+        # Test observations tuple
         self.test_observations = ()
+        # Number of attributes
+        self.num_of_attributes = self.observations[0].num_of_attributes
 
     def extract_labels(self):
         # Store labels in set, to keep them distinct
@@ -64,7 +66,7 @@ class Classifier:
         # Collect all observations from train data file into tuple
         return tuple(observations_list)
 
-    def evaluate_accuracy(self, test_file_path):
+    def evaluate_accuracy(self, test_file_path, share_each_result):
         # Extract data from test file into tuple
         self.test_observations = self.extract_observations(test_file_path)
 
@@ -77,6 +79,9 @@ class Classifier:
             result = self.classify(sample)
             if result == sample.label:
                 num_of_successes += 1
+            # Print result of each sample according to method parameter
+            if share_each_result:
+                print(str(sample) + "\n\tClassified as " + str(result) + ". Success - " + str(result == sample.label))
 
         # Calculate accuracy based on number of successful test samples
         accuracy = num_of_successes * 1. / num_of_all_samples

@@ -6,4 +6,4 @@ class Observation:
         self.num_of_attributes = len(attributes_values)
 
     def __str__(self):
-        return "Label : " + self.label + "\nAttributes values : " + str(self.values)
+        return "Observation :\tLabel : " + self.label + ". Attributes : " + str(self.values)
