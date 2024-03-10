@@ -1,0 +1,26 @@
+Instructions
+Write an implementation of the K nearest neighbors (kNN) algorithm.
+The square of the Euclidean distance should be used to calculate the distance between observations.
+
+After starting the program, the user provides the path to the training file.
+Then, the user (in the console) enters the number K, which denotes the number of nearest neighbors.
+
+The program, running in a loop, allows you to choose one of 3 options:
+a) classification of all observations from the test set given in a separate file - the program allows you to provide the path to the file with the test set, assigns a label
+    and prints the answer for each observation and then provides the accuracy for the entire set
+b) classification of the observation given by the user in the console - the program loads the observation given in the console and assigns a label for the given observation.
+    We assume that the number of features is the same as in the training data, there is no need to provide the correct label
+c) exiting the program
+
+The program should work for any input data provided in the form of a text file where:
+- each line is a single observation
+- each row contains N attributes separated by ","
+- the first N-1 attributes are features of the observation and the last attribute is the decision attribute (correct label)
+The program does not know the number of attributes N in advance, it determines it based on the loaded file.
+
+Optionally, you can make a plot of accuracy against the number K - as a program option or separately, e.g. in Excel.
+
+The program should be written independently. It is not possible to use ready-made libraries implementing machine learning algorithms.
+
+The code (only the file with code not the whole project) should be placed in the appropriate task on the teams platform before classes and presented during classes.
+Only programs that meet the described requirements will be checked!
